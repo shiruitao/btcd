@@ -27,9 +27,29 @@ type GetBlockHeaderVerboseResult struct {
 // GetBlockVerboseResult models the data from the getblock command when the
 // verbose flag is set.  When the verbose flag is not set, getblock returns a
 // hex-encoded string.
+//type GetBlockVerboseResult struct {
+//	Hash          string        `json:"hash"`
+//	Confirmations int64         `json:"confirmations"`
+//	StrippedSize  int32         `json:"strippedsize"`
+//	Size          int32         `json:"size"`
+//	Weight        int32         `json:"weight"`
+//	Height        int64         `json:"height"`
+//	Version       int32         `json:"version"`
+//	VersionHex    string        `json:"versionHex"`
+//	MerkleRoot    string        `json:"merkleroot"`
+//	Tx            []string      `json:"tx,omitempty"`
+//	RawTx         []TxRawResult `json:"rawtx,omitempty"`
+//	Time          int64         `json:"time"`
+//	Nonce         uint32        `json:"nonce"`
+//	Bits          string        `json:"bits"`
+//	Difficulty    float64       `json:"difficulty"`
+//	PreviousHash  string        `json:"previousblockhash"`
+//	NextHash      string        `json:"nextblockhash,omitempty"`
+//}
+
 type GetBlockVerboseResult struct {
 	Hash          string        `json:"hash"`
-	Confirmations int64         `json:"confirmations"`
+	Confirmations uint64        `json:"confirmations"`
 	StrippedSize  int32         `json:"strippedsize"`
 	Size          int32         `json:"size"`
 	Weight        int32         `json:"weight"`
@@ -37,7 +57,7 @@ type GetBlockVerboseResult struct {
 	Version       int32         `json:"version"`
 	VersionHex    string        `json:"versionHex"`
 	MerkleRoot    string        `json:"merkleroot"`
-	Tx            []string      `json:"tx,omitempty"`
+	Tx            []TxRawResult `json:"tx,omitempty"`
 	RawTx         []TxRawResult `json:"rawtx,omitempty"`
 	Time          int64         `json:"time"`
 	Nonce         uint32        `json:"nonce"`
